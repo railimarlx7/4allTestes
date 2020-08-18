@@ -7,3 +7,13 @@ workflows:
   maven_test:
     jobs:
       - maven/test # checkout, build, test, and upload test results
+  
+test:
+  override:
+    - mvn -o surefire:test
+
+deployment:
+  main:
+    branch: master
+    commands:
+      - mvn -s .circleci.settings.xml -DskipTests deploy
