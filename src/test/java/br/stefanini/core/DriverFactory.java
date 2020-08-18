@@ -27,7 +27,7 @@ public class DriverFactory {
 	
 	public static WebDriver iniciarDrive() {
 		ChromeOptions options = new ChromeOptions();
-//		options.addArguments("--headless");
+		options.addArguments("--headless");
 		System.setProperty("webdriver.chrome.driver", "chromedriver/chromedriver.exe");
 		driver = new ChromeDriver(options);
 		driver.manage().window().maximize();
